@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Fontawesome-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--custom css-->
+    <link rel="stylesheet" type="text/css" href="./styling.css">
+
+</head>
+
+
+<body>
+    <div class="buttons">
+        <span id="btnRec" class="btn fa">Drawing Rectangle</span>
+        <br><span id="btnBrush" class="btn fa">Paint Brush</span>
+        <br><span id="btnLine" class="btn fa">Drawing Line</span>
+        <br><span id="btnSmooth" class="btn fa">Edge Smoothing</span>
+        <br><span id="btnCircle" class="btn fa">Drawing Circle</span>
+        <br><span id="btnUndo" class="btn fa" onClick="undoDrawOnCanvas()">Undo</span>
+        <br><span id="reset" class="btn fa">Reset</span>
+        <br><a id="download">
+            <span id="dowload" class="btn fa" onClick="download()">Download</span>
+            </a>
+        <div class="container">
+            <div class="row justify-content-center flex-wrap animals-icon">
+            <img id="dog-1" src="./Assets/dog-icon-01.png" style="width:3vw;">
+            <img id="dog-2" src="./Assets/dog-icon-02.png" style="width:3vw;">
+            <img id="cat" src="./Assets/cat-icon-01.png" style="width:3vw;">
+            <img id="frog" src="./Assets/frog-icon-01.png" style="width:3vw;">
+            <img id="rabbit" src="./Assets/rabbit-icon-01.png" style="width:3vw;">
+            <img id="duck" src="./Assets/duck-icon-01.png" style="width:3vw;">
+        </div>
+    </div>
+
+    <div class="container">
+        <input id="textinput" type="text">
+        <span id="btnText" class="btn fa">Enter Text</span>
+      </div>
+      
+</div>
+
+   
+    <!--canvas-->
+    <div class="containter">
+        <div class="row">
+    <canvas id="canvas-real" class="canvas" width='1200px' height='800px' style="border: 3px solid green; border-radius: 1vw;"></canvas>
+    <canvas id="canvas-draft" class="canvas" width='1200px' height='800px'></canvas>
+        </div>
+    </div>
+    
+    <!--Boostrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+     <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--custome js-->
+    <script type='text/javascript' src="./canvas-common.js"></script>
+    <script type='text/javascript' src="./drawing-line.js"></script>
+    <script type='text/javascript' src="./paint-brush.js"></script>
+    <script type='text/javascript' src="./add-image.js"></script>
+    <script type='text/javascript' src="./add-text.js"></script>
+    <script type='text/javascript' src="./drawing-rectangle.js"></script>
+    <script type='text/javascript' src="./edge-smoothing.js"></script>
+    <script type='text/javascript' src="./drawing-circle.js"></script>
+    <script type='text/javascript' src="./save-button.js"></script>
+
+    <script type='text/javascript'>
+        // Switch based on User input, for example like clicking a button or something else. We will talk about this part in the section after this one. 
+        //currentFunction = new DrawingLine(contextReal,contextDraft);
+        //currentFunction = new DrawingRectangle(contextReal,contextDraft);
+        currentFunction = new DrawingRectangle(contextReal, contextDraft);
+        $('#btnRec').click(function () { currentFunction = new DrawingRectangle(contextReal, contextDraft); });
+        $('#btnBrush').click(function () { currentFunction = new PaintBrush(contextReal, contextDraft); });
+        $('#btnLine').click(function () { currentFunction = new DrawingLine(contextReal, contextDraft); });
+        $('#btnSmooth').click(function () { currentFunction = new EdgeSmoothing(contextReal, contextDraft); });
+        $('#btnCircle').click(function () { currentFunction = new DrawingCircle(contextReal, contextDraft); });
+        $('#btnText').click(function () { currentFunction = new AddText(contextReal, contextDraft); });
+        //$('#btnUndo').addEvent('click', function() {history.undo(canvasReal, contextReal);});
+        $('#reset').click(function () {
+            console.log('clearing')
+            contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+            contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height); });
+
+  
+
+        
+
+    </script>
+
+</body>
+
+</html>
