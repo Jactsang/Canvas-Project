@@ -1,10 +1,11 @@
 
 body{
     overflow:hidden;
-    background-image: url("./Assets/bamboo.jpg");
+    background-image: url("./Assets/bamboo-1.jpg");
     background-repeat: no-repeat;
     background-position:absolute;
     background-size: 100vw;
+    cursor: url('./Assets/brush-01.png'), auto;
 }
 
 .canvas{
@@ -23,39 +24,56 @@ body{
     background-color: transparent;
 }
 
-.buttons{
-
+.paint-tools{
     position:absolute;
-    top:0px;
+    top:900px;
     bottom:0px;
-    left:1320px;
+    left:200px;
     right:0px;
+    width: 50vw;
+}
+
+.paint-othertools{
+    position:absolute;
+    top:980px;
+    bottom:0px;
+    left:670px;
+    right:0px;
+    width: 40vw;
 
 }
 
 .btn{
 
-    margin: 1vw;
-    background-image: url('./Assets/ink.png');
-    background-repeat: no-repeat;
-    background-size: 9vw;
-    background-position: left 1px bottom -10px;
-    color: white;
-    height: 2vw
-
+    font-size: 20px;
+    width: 8vw;
+    margin-right: 10px;
 }
+
 
 .btnShadow{
 
     box-shadow:1px 1px 3px grey;
 }
 
+#stamp{
+
+    position:absolute;
+    top: 630px;
+    left: 1370px;
+
+}
+
+#btnStamp img:active{
+    background-color:#000000;
+}
+
 
 .animals-icon{
-    background-color: #eeb076;
-    width: 10vw;
-    border-radius: 1vw;
+    background-color: #ffffff;
+    width: 8vw;
     border: 3px dotted #2b2b2b;
+    padding-left: 15px;
 }
 
 .animals-icon img{
@@ -64,3 +82,57 @@ body{
 
 
 }
+
+#color-input {
+    display: none;
+  }
+  #color-label {
+    margin-left: 15px;
+    position: absolute;
+    left: 540px;
+    top: 986px;
+    height: 30px;
+    width: 50px;
+    border: 2px solid #000000;
+  } 
+  #color-input:checked ~ #color-picker {
+    opacity: 1;
+  }
+  #color-picker {
+    position: absolute;
+    left: 340px; 
+    top: 980px;
+    background-color: white;
+    height: 165px;
+    width: 199px;
+    border: solid 1px #ccc;
+    opacity: 0;
+    padding: 5px;
+  }
+
+  #btnText{
+    position: absolute;
+    left: 1370px; 
+    top: 700px;
+
+  }
+
+  #textbox{
+
+    position: absolute;
+    left: 1371px; 
+    top: 760px;
+  }
+
+  #textbox span{
+
+    margin: 10px;
+    width: 3vw;
+    position: relative;
+    left: 100px
+  }
+
+  .active{
+
+    background-color: #a5cab0;
+  }

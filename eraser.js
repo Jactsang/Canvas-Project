@@ -1,33 +1,26 @@
-
-
-class EdgeSmoothing extends PaintFunction{
+class Eraser extends PaintFunction{
     constructor(contextReal){
         super();
-        this.context = contextReal;            
+        this.context = contextReal;        
     }
     
     onMouseDown(coord,event){
-        //this.context.strokeStyle = "#000000";
-        this.context.strokeStyle = rgbaColor;
+        this.context.strokeStyle = "#ffffff";
+        this.context.lineJoin = "round";
         this.context.lineWidth = 10;
-        this.context.lineJoin = this.context.lineCap = 'round';
-        this.context.shadowBlur = 10;
-        this.context.shadowColor = rgbaColor;
-        //this.context.shadowColor = 'rgb(0, 0, 0)';
         this.context.beginPath();
         this.context.moveTo(coord[0],coord[1]);
         this.draw(coord[0],coord[1]);
     }
     onDragging(coord,event){
+        this.context.strokeStyle = "ffffff";
         this.draw(coord[0],coord[1]);
     }
 
     onMouseMove(){}
     onMouseUp(){
-        this.context.shadowBlur = 0;
-        this.context.shadowColor = '';
+        this.context.strokeStyle = "";
         saveRestorePoint();
-
     }
     onMouseLeave(){}
     onMouseEnter(){}
@@ -36,6 +29,6 @@ class EdgeSmoothing extends PaintFunction{
         this.context.lineTo(x,y);
         this.context.moveTo(x,y);
         this.context.closePath();
-        this.context.stroke();  }  
-
+        this.context.stroke();    
+    }
 }

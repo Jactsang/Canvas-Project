@@ -5,6 +5,7 @@ let contextDraft = canvasDraft.getContext('2d');
 let currentFunction;
 let dragging = false;
 let restorePoints = [];
+let redoList = [];
 
 
 $('#canvas-draft').mousedown(function(e){
@@ -50,7 +51,8 @@ function saveRestorePoint() {
 
 function undoDrawOnCanvas() {
     contextReal.clearRect(0, 0, canvasReal.width, canvasReal.height);
-    restorePoints.splice(-1,1);
+    picUndo = restorePoints.pop();
+    redoList.push(picUndo);
 
     for (var i = 0; i < restorePoints.length; i++) {
         var img = new Image();
@@ -59,6 +61,22 @@ function undoDrawOnCanvas() {
         };
         img.src = restorePoints[i];
     }
+}
+
+function redoDrawOnCanvas() {
+    contextReal.clearRect(0, 0, canvasReal.width, canvasReal.height);
+
+    for (var i = 0; i < redoList.length; i++) {
+        var img = new Image();
+        img.onload = function() {
+            contextReal.drawImage(img, 0, 0);
+        };
+        img.src = redoList[i];  
+    }
+
+    picRedo = redoList.pop();
+    restorePoints.push(picRedo);
+    
 }
 
 class PaintFunction{
@@ -70,4 +88,29 @@ class PaintFunction{
     onMouseLeave(){}
     onMouseEnter(){}
 }    
+
+$('.animals-icon').hide();
+$('#textbox').hide();
+
+$('#btnStamp').hover(function(){
+    $('.animals-icon').show();
+});
+
+$('.animals-icon').hover(function(){
+    $('.animals-icon').show();
+});
+
+$('#btnStamp').mouseleave(function(){
+    $('.animals-icon').hide();
+});
+
+$('.animals-icon').mouseleave(function(){
+    $('.animals-icon').hide();
+});
+
+
+$('.animals-icon img').click(function() {
+  $('.active').removeClass('active');
+  $(this).addClass('active');
+});
 

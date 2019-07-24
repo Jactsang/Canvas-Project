@@ -5,7 +5,8 @@ class PaintBrush extends PaintFunction{
     }
     
     onMouseDown(coord,event){
-        this.context.strokeStyle = "#df4b26";
+        //this.context.strokeStyle = "#df4b26";
+        this.context.strokeStyle = colorLabel.style.backgroundColor;
         this.context.lineJoin = "round";
         this.context.lineWidth = 5;
         this.context.beginPath();
@@ -13,13 +14,14 @@ class PaintBrush extends PaintFunction{
         this.draw(coord[0],coord[1]);
     }
     onDragging(coord,event){
-        this.context.strokeStyle = "#df4b26";
+        //this.context.strokeStyle = "#df4b26";
+        this.context.strokeStyle = colorLabel.style.backgroundColor;
         this.draw(coord[0],coord[1]);
     }
 
     onMouseMove(){}
     onMouseUp(){
-        this.context.strokeStyle = "";
+        //this.context.strokeStyle = "";
         saveRestorePoint();
     }
     onMouseLeave(){}

@@ -8,4 +8,5 @@ function download() {
         .replace("image/png", "image/octet-stream");
     download.setAttribute("href", image);
     //download.setAttribute("download","archive.png");
+    $('body').css("cursor","url('./Assets/brush-01.png'), auto");
     }
