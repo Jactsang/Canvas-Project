@@ -114,3 +114,18 @@ $('.animals-icon img').click(function() {
   $(this).addClass('active');
 });
 
+// color pickers
+
+$('#strokecolor-picker').hide();
+$('#fillcolor-picker').hide();
+
+
+$('#strokecolor-label').click(function(){
+
+    $('#strokecolor-picker').show();
+});
+
+$('#fillcolor-input').click(function(){
+
+    $('#fillcolor-picker').show();
+});
