@@ -17,7 +17,7 @@ class AddText extends PaintFunction{
     writeText(x,y){
 
         this.context.font = `${$('#fontsize').val()} Arial`;
-        this.context.fillStyle = colorLabel.style.backgroundColor;
+        this.context.fillStyle = strokeColorLabel.style.backgroundColor;
         this.context.fillText($('#textinput').val(), x, y);
         saveRestorePoint();
     

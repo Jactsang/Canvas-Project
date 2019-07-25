@@ -6,7 +6,7 @@ class PaintBrush extends PaintFunction{
     
     onMouseDown(coord,event){
         //this.context.strokeStyle = "#df4b26";
-        this.context.strokeStyle = colorLabel.style.backgroundColor;
+        this.context.strokeStyle = strokeColorLabel.style.backgroundColor;
         this.context.lineJoin = "round";
         this.context.lineWidth = 5;
         this.context.beginPath();
@@ -15,7 +15,7 @@ class PaintBrush extends PaintFunction{
     }
     onDragging(coord,event){
         //this.context.strokeStyle = "#df4b26";
-        this.context.strokeStyle = colorLabel.style.backgroundColor;
+        this.context.strokeStyle = strokeColorLabel.style.backgroundColor;
         this.draw(coord[0],coord[1]);
     }
 

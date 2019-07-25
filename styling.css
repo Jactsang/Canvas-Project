@@ -83,25 +83,37 @@ body{
 
 }
 
-#color-input {
+/*color for stroke*/
+
+#stroke{
+
+  position: absolute;
+  left: 493px;
+  top: 970px;
+}
+
+#strokecolor-input {
     display: none;
   }
-  #color-label {
+
+#strokecolor-label {
     margin-left: 15px;
     position: absolute;
-    left: 540px;
-    top: 986px;
+    left: 480px;
+    top: 1000px;
     height: 30px;
     width: 50px;
     border: 2px solid #000000;
   } 
-  #color-input:checked ~ #color-picker {
+
+#strokecolor-input:checked ~ #strokecolor-picker {
     opacity: 1;
   }
-  #color-picker {
+
+#strokecolor-picker {
     position: absolute;
-    left: 340px; 
-    top: 980px;
+    left: 280px; 
+    top: 1000px;
     background-color: white;
     height: 165px;
     width: 199px;
@@ -109,6 +121,46 @@ body{
     opacity: 0;
     padding: 5px;
   }
+
+/*color for fill*/
+
+#fill{
+
+  position: absolute;
+  left: 550px;
+  top: 1003px;
+
+}
+
+#fillcolor-input {
+  display: none;
+}
+
+#fillcolor-label {
+  margin-left: 15px;
+  position: absolute;
+  left: 530px;
+  top: 1030px;
+  height: 30px;
+  width: 50px;
+  border: 2px solid #000000;
+} 
+
+#fillcolor-input:checked ~ #fillcolor-picker {
+  opacity: 1;
+}
+
+#fillcolor-picker {
+  position: absolute;
+  left: 610px; 
+  top: 1030px;
+  background-color: white;
+  height: 165px;
+  width: 199px;
+  border: solid 1px #ccc;
+  opacity: 0;
+  padding: 5px;
+}
 
   #btnText{
     position: absolute;

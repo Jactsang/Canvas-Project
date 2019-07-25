@@ -18,7 +18,7 @@ class DrawingLine extends PaintFunction{
         console.log('mousedown')
     }
     onDragging(coord,event){
-    this.contextDraft.strokeStyle = colorLabel.style.backgroundColor;
+    this.contextDraft.strokeStyle = strokeColorLabel.style.backgroundColor;
     this.contextDraft.lineJoin = "round";
     this.contextDraft.lineWidth = 5;
     this.contextDraft.beginPath();
@@ -30,7 +30,7 @@ class DrawingLine extends PaintFunction{
 }
     onMouseMove(){}
     onMouseUp(coord,event){
-        this.contextReal.strokeStyle = colorLabel.style.backgroundColor;
+        this.contextReal.strokeStyle = strokeColorLabel.style.backgroundColor;
         this.contextReal.lineJoin = "round";
         this.contextReal.lineWidth = 5;
         this.contextReal.beginPath();
@@ -41,8 +41,7 @@ class DrawingLine extends PaintFunction{
         saveRestorePoint();
 
     }
-    onMouseLeave(){
-        this.contextReal.strokeStyle = " ";}
+    onMouseLeave(){}
     onMouseEnter(){}
 
 }
