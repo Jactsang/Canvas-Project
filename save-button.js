@@ -1,4 +1,4 @@
-var pic=1;
+var pic=0;
 
     function download() {
         pic++;
