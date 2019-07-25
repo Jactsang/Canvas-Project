@@ -28,6 +28,7 @@
             <span id="btnLine" class="btn btn-outline-dark">Drawing Line</span>
             <span id="btnSmooth" class="btn btn-outline-dark">Spray</span>
             <span id="btnCircle" class="btn btn-outline-dark">Drawing Circle</span>
+            <span id="btnTriangle" class="btn btn-outline-dark">Drawing Triangle</span>
             <span id="btnEraser" class="btn btn-outline-dark">Eraser</span>
         </div>
     </div>
@@ -109,6 +110,7 @@
             <script type='text/javascript' src="./add-image.js"></script>
             <script type='text/javascript' src="./add-text.js"></script>
             <script type='text/javascript' src="./drawing-rectangle.js"></script>
+            <script type='text/javascript' src="./drawing-triangle.js"></script>
             <script type='text/javascript' src="./edge-smoothing.js"></script>
             <script type='text/javascript' src="./drawing-circle.js"></script>
             <script type='text/javascript' src="./eraser.js"></script>
@@ -138,6 +140,10 @@
                 });
                 $('#btnCircle').click(function () {
                     currentFunction = new DrawingCircle(contextReal, contextDraft);
+                    $('body').css("cursor", "url('./Assets/brush-01.png'), auto");
+                });
+                $('#btnTriangle').click(function () {
+                    currentFunction = new DrawingTriangle(contextReal, contextDraft);
                     $('body').css("cursor", "url('./Assets/brush-01.png'), auto");
                 });
                 $('#btnEraser').click(function () {
