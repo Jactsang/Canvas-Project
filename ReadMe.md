@@ -1,7 +1,13 @@
 # Canvas 
 
-This is a canvas project designed by students at Xccelerate for the full-time software engineering.
+This is a canvas project designed by students at Xccelerate for the full-time software engineering. 
 
+```
+Note: It is not a mobile responsive application but only presented in the best shape on xomputer browser. Please zoom in or zoom out to resize your browser before using this application.
+```
+
+## Sample Drawing
+![alt text](https://i.ibb.co/6BtKfL0/pic-2.png)
 
 The online paint canvas consists of multiple functions. These include:
 
